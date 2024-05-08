@@ -1,0 +1,52 @@
+using System;
+astract class Shape
+{
+    public abstract double CalculateArea();
+    public void Print()
+    {
+        Conole.WriteLine("Printing Shape...");
+
+    }
+}
+class Rectangle:Shape
+{
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height)
+    {
+        this.width = width;
+        this.height = height;
+
+    }
+    public override double CalculateArea()
+    {
+        return width * height;
+    }
+}
+class Circle : Shape
+{
+    private double radius;
+    public Circle(double radius)
+    {
+        this.radius = radius;
+    }
+    public override double CalculateArea()
+    {
+        return Math.PI * radius * radius;
+
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Shape Rectangle = new Rectangle(5,10);
+        double rectangleArea = rectangle.CalculateArea();
+        Console.WriteLine("Rectangle Area:", rectangleArea);
+
+        Shape circle = new Circle(7);
+        double circleArea = circle.CalculateArea();
+        Conosle.WriteLine("Circle Area: ", circleArea)
+    }
+}
